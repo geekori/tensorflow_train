@@ -16,8 +16,8 @@ def perceptron(x1,x2,params):
     theta = params['theta']
 
     n = x1 * w1 + x2 * w2
-    init = tf.global_variables_initializer()
-    with tf.Session() as session:
+    init = tf.compat.v1.global_variables_initializer()
+    with tf.compat.v1.Session() as session:
         init.run()
         n = n.eval()
         theta = session.run(theta)
@@ -26,7 +26,7 @@ def perceptron(x1,x2,params):
         elif n > theta:
             return tf.constant(1)
 
-with tf.Session() as session:
+with tf.compat.v1.Session() as session:
     x1 = tf.Variable(1.0)
     x2 = tf.Variable(1.0)
     y = perceptron(x1,x2,and_params)
