@@ -196,6 +196,7 @@ for i in range(iters_num):
 
     # 计算梯度（得到了W和b应该加上或减少的幅度）
     grad = net.gradient(x_batch,t_batch)
+    print(grad)
    # print(grad)
     # 更新参数
     for key in ('W1','b1','W2','b2'):
